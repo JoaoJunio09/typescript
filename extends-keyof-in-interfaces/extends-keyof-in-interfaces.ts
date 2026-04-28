@@ -45,3 +45,20 @@ const obj: ObjDinamico<{ salario: number, status: boolean }> = {
 	salario: 8000,
 	status: true
 };
+
+interface Teste { salario: number, status: boolean };
+
+function transformarObjeto<T, U extends T[keyof T]>(obj: T, transFn: (item: T[keyof T]) => U): { [K in keyof T]: U } {
+	const novoObj = {} as { [K in keyof T]: U };
+
+	return novoObj;
+}
+
+const teste: Teste = {
+	salario: 1000,
+	status: true
+}
+
+transformarObjeto(teste, (item) => {
+	return 2+2;
+});
