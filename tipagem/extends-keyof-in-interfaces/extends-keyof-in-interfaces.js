@@ -20,3 +20,15 @@ const obj = {
     salario: 8000,
     status: true
 };
+;
+function transformarObjeto(obj, transFn) {
+    const novoObj = {};
+    return novoObj;
+}
+const teste = {
+    salario: 1000,
+    status: true
+};
+transformarObjeto(teste, (item) => {
+    return 2 + 2;
+});
